@@ -20,9 +20,6 @@ public class DemoApplication {
 			System.out.println("Beans are the following: ");
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
-			for (String beanName : beanNames) {
-				System.out.println(beanName);
-			}
 		};
 	}
 }
