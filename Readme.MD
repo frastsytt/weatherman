@@ -11,8 +11,8 @@ The two main components (client & server) of this project are managed as seperat
 
 * Setup notes
 	- Fresh Win10 Pro N
-	- IntelliJ, Np++, Spring-Boot 2.7.3, Maven, Node.js, VSCode, Git
-		- node packages: tailwind, angular,
+	- IntelliJ, Np++, Spring-Boot 2.7.3, Maven 3.8.6, Node.js, VSCode, Git
+		- node packages: tailwind, angular CLI,
 		- other tools: Initializr* (base project was made using it)
 
 * Issues with importing Jackson for handling JSON, particularly with ObjectMapper (MASSIVE TIMESINK)
