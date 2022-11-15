@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     });
   }
   async requestAPI(formValues: any){
-    this.sendApiRequest.getApi(formValues).subscribe(data => {this.weatherData = data});
+    this.sendApiRequest.getApi(formValues).subscribe(data => {this.weatherData = data
+    console.log(data)});
   }
 }

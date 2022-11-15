@@ -13,13 +13,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-	}
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx){
-		return args	-> {
-			System.out.println("Beans are the following: ");
-			String[] beanNames = ctx.getBeanDefinitionNames();
-			Arrays.sort(beanNames);
-		};
+		// Initialize API endpoints
+		ApiQuery.Initialize();
+		System.out.println("API being served on port 7280");
 	}
 }

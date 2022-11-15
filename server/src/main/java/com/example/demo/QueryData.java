@@ -1,12 +1,8 @@
 package com.example.demo;
 
-import org.json.JSONObject;
 
 public class QueryData {
 
-    // Creating an object of ArrayList
-    static JSONObject Data
-            = new JSONObject();
     double longitude;
     double latitude;
     String location;
