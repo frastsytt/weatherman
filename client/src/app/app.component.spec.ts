@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Weatherman');
   });
 
-  it('should render title', () => {
+  it('should fetch', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Weatherman app is running!');
+    expect(compiled.querySelector('body > app-root > app-home > div > div > form > div:nth-child(3) > button')?.textContent).toContain('Fetch');
   });
 });

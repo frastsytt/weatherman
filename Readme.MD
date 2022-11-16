@@ -9,6 +9,8 @@ The two main components (client & server) of this project are managed as seperat
 
 ## Notes & issues I encountered
 
+###### V1
+
 * Setup notes
 	- Fresh Win10 Pro N
 	- IntelliJ, Np++, Spring-Boot 2.7.3, Maven 3.8.6, Node.js, VSCode, Git
@@ -32,3 +34,25 @@ The two main components (client & server) of this project are managed as seperat
 * Original idea to make comparisons between the diffrent API-s included using modals. Couldn't get modals to work properly due to time constraints, so I went with a basic table instead.
 
 * met.no API rejected queries which had a "User-Agent", "Java 19". A working fix would've required too much time, went with OpenWeatherAPI instead.
+
+###### V2
+
+* Thought about how to save data about each of the Apis being used (the url and key).
+	- Went with a hashmap saving the Api commonname as the key and an instance of the class "Api" as it's value, this makes adding additional API endpoints easier later on, if desired so.
+	- The object made from the class "Api" has the following attributes: 1) URL 2)Key
+	- The object made from the class "Api" has the following methods:
+		- getApiKey() - Returns the Api key
+		- getApiUrl() - Returns the Api URL
+
+* Wanted to tackle the interactive map where a user can select a point on the map and it would fill in the latitude and longitude values of the form.
+	- Tried various npm libraries, ended up going with the "@angular/google-maps".
+	- Had to setup an API key to interact with it.
+	- Used a @Output decorator and made clicks on the map component emit events with data.
+	- Set up a listener for said event in the home component and trigger a method which overwrites the formBuilder values.
+
+* Ran into the error: "Cannot find namespace ‘google’." when trying to fix up tests.
+	- The solution to that was to install the @types/google.maps npm package and include it in both "tsconfig.spec.json" and "tsconfig.app.json".
+
+* Since the "google-maps" component is from an external source and requires some sort of a workaround, I decided to exclude the "google-maps-demo" component from being tested.
+	- Tried to add the source to my local files ("tests/google-maps-api.js") and 
+	- Added said component directory to "codeCoverageExclude" in the "angular.json" file.

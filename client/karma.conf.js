@@ -39,6 +39,8 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    files: ['https://maps.googleapis.com/maps/api/js?key=AIzaSyCV1v5KOnRB_tP-UrL3pEcXb-9Rb96ipuQ',
+    'src\/app\/testing\/google-maps-api.js'],
   });
 };

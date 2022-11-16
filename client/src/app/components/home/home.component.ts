@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ApireqService } from '../apireq.service';
+import { ApireqService } from '../../services/apireq.service';
+import { GooglemapComponent } from '../google-maps-demo/google-maps-demo.component'
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
   selector: 'app-home',
