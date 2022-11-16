@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApireqService {
-  baseURL: string = "http://localhost:6969/";
+  baseURL: string = "http://localhost:7280/";
   constructor(private http: HttpClient) { }
 
   getApi(data: any){

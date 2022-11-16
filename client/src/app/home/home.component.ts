@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private sendApiRequest: ApireqService) { }
-
   ngOnInit(){
     this.weatherSearchForm = this.formBuilder.group({
       longitude: [''],
@@ -24,4 +23,9 @@ export class HomeComponent implements OnInit {
     this.sendApiRequest.getApi(formValues).subscribe(data => {this.weatherData = data
     console.log(data)});
   }
+  onSnapshot(latlng: any){
+    this.weatherSearchForm.controls['latitude'].setValue(latlng.lat);
+    this.weatherSearchForm.controls['longitude'].setValue(latlng.lng);
+  }
 }
+
